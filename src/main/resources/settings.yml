@@ -1,0 +1,18 @@
+##########################################################
+#              Region Claimer - Settings                 #
+#--------------------------------------------------------#
+# Beim modifizieren der Werte ist wichtig zu beachten,   #
+# dass der originale Typ des Wertes beibehalten wird!    #
+##########################################################
+
+# Die Kosten pro Block, welche beim claim berechnet werden.
+# Hierbei zählt nur die zwei dimensionale Fläche, nicht die Höhen
+Block Cost: 0.5
+
+# Der Kosten Multiplikator pro besitzende Region.
+# Zum Deaktivieren auf '1' setzen
+Region Multiplier: 2
+
+# Die maximale Anzahl an Regionen, welche ein
+# Spieler gleichzeitig besitzen kann
+Max Region Amount: 5

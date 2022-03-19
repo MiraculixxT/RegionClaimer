@@ -1,0 +1,21 @@
+name: RegionClaimer
+load: STARTUP
+version: 1.1.0
+main: de.miraculixx.regionClaimer.Main
+api-version: 1.18
+authors: [ Miraculixx ]
+description: Claime Landgebiete einfach und anschaulich
+website: http://support.miraculixx.de
+depend: [WorldGuard, WorldEdit]
+softdepend: [Vault]
+libraries:
+  - "net.axay:kspigot:1.18.0"
+  - "org.jetbrains.kotlin:kotlin-stdlib:1.6.10"
+  - "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.0"
+  - "org.jetbrains.kotlinx:kotlinx-coroutines-jdk8:1.6.0"
+
+commands:
+  claim:
+    description: Claim your own Regions and Areas
+  adminclaim:
+    permission: rgclaim.command.adminclaim

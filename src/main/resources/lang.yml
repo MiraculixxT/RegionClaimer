@@ -1,0 +1,49 @@
+##########################################################
+#              Region Claimer - Language                 #
+#--------------------------------------------------------#
+# Als Textformat wird MiniMessage unterstützt. Eine      #
+# online Generator sowie Informationen findet man hier   #
+# https://docs.adventure.kyori.net/minimessage/format    #
+#--------------------------------------------------------#
+# Success Color - #86BF73 - #509739                      #
+# Error Color - #BB6262 - #D14545                        #
+##########################################################
+
+command:
+  error: "<#BB6262>Ein unerwarteter Fehler ist aufgetreten! Bitte kontaktiere das Team"
+  claim:
+    help: "<rainbow>Hier deine Hilfe..."
+    noCurrentTry: "Nix da"
+    toManyRegions: "<color:#BB6262>Du bist Besitzer von zu vielen Region um eine neue zu Erstellen!</color>"
+    noOwner: "<color:#BB6262>Du bist kein Besitzer dieser Region!</color>"
+    noRegion: "<color:#BB6262>Du befindest dich aktuell in keiner Region!</color>"
+    confirm: "<color:#BB6262>Du bist dabei deine Region zu löschen! Dieser Vorgang ist nicht umkehrbar und es wird kein Geld erstattet! <color:#d14545><hover:show_text:'<b><color:#d14545>Löschung Bestätigen</color></b><newline><color:#bb6262>Bist du dir ganz sicher?</color>'><u><click:run_command:'/claim ireallywanttodeletethisregion'>Klicke hier</click></u></hover></color> um den Vorgang zu bestätigen</color>"
+    delete: "<#86BF73>Die Region wurde erfolgreich gelöscht!"
+
+event:
+  modify:
+    addUser: "\n<color:#3b702a><st>                   </st>[ <color:#87ff60>Region</color> ]<st>                   </st></color>\n<color:#509739>Befehl<color:#adadad> ≫</color> <color:#86BF73><click:suggest_command:'/claim addUser '><hover:show_text:'<color:#509739><b>Vorlage</b></color><newline><color:#86bf73>Klicke hier um direkt zum<newline>Befehl zu gelangen</color>'>/claim addUser <player> <rank></hover></click></color>\n<color:#509739><player><color:#adadad> ≫</color> <color:#86BF73><click:suggest_command:'/claim addUser '><hover:show_text:'<color:#509739><b>Vorlage</b></color><newline><color:#86bf73>Klicke hier um direkt zum<newline>Befehl zu gelangen</color>'>Spieler Name</hover></click></color>\n<color:#509739><rank><color:#adadad> ≫</color> <color:#86BF73><click:suggest_command:'/claim addUser '><hover:show_text:'<color:#509739><b>Vorlage</b></color><newline><color:#86bf73>Klicke hier um direkt zum<newline>Befehl zu gelangen</color>'>Owner - Vollständiger Zugriff\n           Member - Eingeschränkter Zugriff"
+    addError: "<#BB6262>Spieler konnte nicht hinzugefügt werden! Bedenke, der Spieler muss mindestens einmal auf dem Server gespielt haben"
+    addSuccess: "<#86BF73>Der Spieler %INPUT% wurde erfolgreich als %INPUT-2% hinzugefügt!"
+    alreadyAdded: "<#BB6262>Der Spieler <#D14545>%INPUT%</#D14545> ist bereits %INPUT-2%!"
+    noPlayer: "<#BB6262>Der ausgewählte Spieler existiert nicht!"
+    notMember: "<#BB6262>Der Spieler <#D14545>%INPUT%</#D14545> ist kein Member!"
+    notOwner: "<#BB6262>Der Spieler <#D14545>%INPUT%</#D14545> ist kein Owner!"
+    remove: "<#86BF73>"
+  create:
+    warning: "<#2D93E0>Verbleibende Zeit "
+    step1: "<#86BF73>Markiere nun deine Fläche, welche du claimen möchtest!\n<BLUE>Links Klick<GRAY> ≫ Position 1\n<BLUE>Rechts Klick<GRAY> ≫ Position 2"
+    step2: "<#86BF73>Nun markiere eine zweite Position um deinen Bereich einzuschränken!"
+    step3: "<#86BF73>Bereich erfolgreich eingestellt! Gebe nun den Namen an, welchen die Region tragen soll!"
+    newPos: "<#86BF73>%INPUT% wurde bei <#509739>%INPUT-2%</#509739> gesetzt"
+    invalidPos: "<#BB6262>Position konnte nicht gesetzt werden aufgrund von Region-überlappung!"
+    cancel: "<#BB6262>Prozess wurde abgebrochen! <#D14545><underlined><click:run_command:/claim new><hover:show_text:'<#4797C9>Erstelle einen neuen Claim'>Klicke hier<reset><#BB6262> um erneut zu beginnen"
+    timedOut: "<#BB6262>Die Zeit zum erstellen ist abgelaufen! <#D14545><underlined><click:run_command:/claim new><hover:show_text:'<#4797C9>Erstelle einen neuen Claim'>Klicke hier<reset><#BB6262> um einen neuen Versuch zu starten"
+    error: "<#BB6262>Ein unerwarteter Fehler ist aufgetreten! <#D14545><underlined><click:run_command:/claim retry><hover:show_text:'<#4797C9>Erstelle einen neuen Claim'>Klicke hier<reset><#BB6262> um es erneut zu versuchen"
+    nameInUse: "<#BB6262>Der Name <#D14545>%INPUT%</#D14545> wird bereits verwendet!"
+    invalidChars: "<#BB6262>Der Name <#D14545>%INPUT%</#D14545> enthält verbotene Zeichen! (a-z A-Z 1-9 _ - +)"
+    nameTooLong: "<#BB6262>Der Name <#D14545>%INPUT%</#D14545> ist zu lange! Maximal sind 16 Zeichen erlaubt!"
+    newName: "<#86BF73>Der Name <#509739>%INPUT%</#509739> wurde erfolgreich gesetzt!"
+    notEnoughMoney: "<#BB6262>Du hast nicht genügend Geld für diese Region!"
+    success: "<#86BF73>Deine Region wurde erfolgreich erstellt!"
+    overlapping: "<#BB6262>Der angegebene Bereich überschneidet sich mit einer anderen Region!"
