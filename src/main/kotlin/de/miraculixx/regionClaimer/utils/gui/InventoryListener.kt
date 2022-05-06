@@ -37,8 +37,7 @@ object InventoryListener {
         val loc = player.location
 
         it.isCancelled = true
-        val id = item.itemMeta.customModel
-        when (id) {
+        when (val id = item.itemMeta.customModel) {
             200 -> {
                 if (title == GUITypes.REGION_MODIFY.title) return@listen
                 player.click()

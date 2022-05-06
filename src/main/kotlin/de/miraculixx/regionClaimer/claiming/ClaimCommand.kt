@@ -13,7 +13,6 @@ import net.axay.kspigot.extensions.onlinePlayers
 import net.axay.kspigot.runnables.taskRunLater
 import net.kyori.adventure.text.Component
 import org.bukkit.Bukkit
-import org.bukkit.Location
 import org.bukkit.Sound
 import org.bukkit.World
 import org.bukkit.command.Command
@@ -187,13 +186,13 @@ class ClaimCommand : CommandExecutor, TabCompleter {
     }
 
     private fun highlight(bv3: BlockVector3, world: World) {
-        val loc = world.getHighestBlockAt(bv3.x, bv3.z).location.clone().subtract(0.0,1.0,0.0)
+        val loc = world.getHighestBlockAt(bv3.x, bv3.z).location.clone().subtract(0.0, 1.0, 0.0)
         val shulker = world.spawn(loc, Shulker::class.java)
         shulker.isGlowing = true
         shulker.setAI(false)
         shulker.isInvisible = true
         shulker.isInvulnerable = true
-        shulker.teleport(loc.add(0.0,1.0,0.0))
+        shulker.teleport(loc.add(0.0, 1.0, 0.0))
         taskRunLater(30) {
             shulker.remove()
         }

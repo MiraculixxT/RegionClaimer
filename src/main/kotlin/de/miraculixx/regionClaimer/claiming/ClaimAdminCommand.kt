@@ -9,10 +9,7 @@ import org.bukkit.command.Command
 import org.bukkit.command.CommandExecutor
 import org.bukkit.command.CommandSender
 import org.bukkit.command.TabCompleter
-import org.bukkit.entity.AreaEffectCloud
 import org.bukkit.entity.Player
-import org.bukkit.potion.PotionEffect
-import org.bukkit.potion.PotionEffectType
 import java.time.Duration
 
 class ClaimAdminCommand : CommandExecutor, TabCompleter {
@@ -32,7 +29,7 @@ class ClaimAdminCommand : CommandExecutor, TabCompleter {
                     msg += "|"
                     sender.showTitle(Title.title(mm.deserialize(msg), mm.deserialize(msg), Title.Times.times(Duration.ZERO, Duration.ofSeconds(1), Duration.ZERO)))
                     if (it.counterUp == 100L) {
-                        fuun(msg, sender)
+                        blink(msg, sender)
                     }
                 }
             }
@@ -47,11 +44,11 @@ class ClaimAdminCommand : CommandExecutor, TabCompleter {
         return true
     }
 
-    private fun fuun(msg: String, player: Player) {
+    private fun blink(msg: String, player: Player) {
         val message = msg.replace("<rainbow>", "<rainbow:%%>")
         task(false, 1, 1, 100) {
-            val msg = mm.deserialize(message.replace("%%", it.counterUp.toString()))
-            player.showTitle(Title.title(msg, msg, Title.Times.times(Duration.ZERO, Duration.ofSeconds(1), Duration.ZERO)))
+            val m = mm.deserialize(message.replace("%%", it.counterUp.toString()))
+            player.showTitle(Title.title(m, m, Title.Times.times(Duration.ZERO, Duration.ofSeconds(1), Duration.ZERO)))
         }
     }
 

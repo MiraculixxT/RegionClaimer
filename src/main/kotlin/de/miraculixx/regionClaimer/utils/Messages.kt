@@ -3,7 +3,6 @@ package de.miraculixx.regionClaimer.utils
 import de.miraculixx.regionClaimer.system.ConfigManager
 import de.miraculixx.regionClaimer.system.Configs
 import net.kyori.adventure.text.Component
-import net.md_5.bungee.api.ChatColor
 import org.bukkit.Location
 import org.bukkit.entity.Player
 
@@ -18,34 +17,6 @@ fun getMessage(key: String, player: Player? = null, input: String? = null, input
     if (input2 != null) final = final.replace("%INPUT-2%", input2)
 
     return component.append(mm.deserialize(final))
-}
-
-fun getMessageList(key: String, inline: String? = null): List<String> {
-    val config = ConfigManager.getConfig(Configs.LANGUAGE)
-    val final = if (inline == null) {
-        val l = ArrayList<String>()
-        config.getStringList(key).forEach {
-            l.add(it.replaceColor())
-        }
-        l
-    } else {
-        val l = ArrayList<String>()
-        config.getStringList(key).forEach {
-            l.add(inline + it.replaceColor())
-        }
-        l
-    }
-
-    if (final.isEmpty()) final.add("§c$key")
-    return final
-}
-
-fun String.cropColor(): String {
-    return ChatColor.stripColor(this)
-}
-
-fun String.replaceColor(): String {
-    return ChatColor.translateAlternateColorCodes('&', this)
 }
 
 fun MutableList<String>.addLines(vararg lines: String): MutableList<String> {

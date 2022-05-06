@@ -1,3 +1,5 @@
+@file:Suppress("unused")
+
 package de.miraculixx.regionClaimer.system
 
 import org.bukkit.configuration.file.FileConfiguration
@@ -21,7 +23,7 @@ object ConfigManager {
     }
 
     fun saveAll() {
-        configMap.forEach { (c, file) ->
+        configMap.forEach { (_, file) ->
             file.save()
         }
     }

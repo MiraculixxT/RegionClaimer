@@ -2,14 +2,12 @@ package de.miraculixx.regionClaimer.utils.gui.items
 
 import com.mojang.authlib.GameProfile
 import com.mojang.authlib.properties.Property
-import com.sk89q.worldguard.protection.ApplicableRegionSet
 import com.sk89q.worldguard.protection.regions.ProtectedRegion
 import de.miraculixx.regionClaimer.utils.consoleMessage
 import org.bukkit.inventory.ItemStack
 import org.bukkit.inventory.meta.SkullMeta
 import java.lang.reflect.Field
 import java.util.*
-import kotlin.collections.LinkedHashMap
 
 fun skullTexture(meta: SkullMeta, base64: String): SkullMeta {
     val profile = GameProfile(UUID.randomUUID(), "")

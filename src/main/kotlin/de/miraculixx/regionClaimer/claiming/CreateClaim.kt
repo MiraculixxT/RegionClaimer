@@ -31,7 +31,6 @@ import org.bukkit.event.player.PlayerInteractEvent
 import org.bukkit.event.player.PlayerToggleSneakEvent
 import org.bukkit.scoreboard.Team
 import java.time.Duration
-import java.util.regex.Pattern
 
 class CreateClaim(private val player: Player) {
     //Config Data
@@ -344,7 +343,7 @@ class CreateClaim(private val player: Player) {
             player.sendMessage(getMessage("event.create.nameTooLong", player, message))
             return@listen
         }
-        if (!Pattern.matches("[a-zA-Z1-9_-]+", message)) {
+        if (!"[a-zA-Z\\d-]+".toRegex().matches(message)) {
             player.sendMessage(getMessage("event.create.invalidChars", player, message))
             return@listen
         }
@@ -371,7 +370,6 @@ class CreateClaim(private val player: Player) {
         if (createRegion()) {
             finish()
             player.playSound(player.location, Sound.ENTITY_FIREWORK_ROCKET_TWINKLE, 1f, 1.2f)
-        }
-        else player.error()
+        } else player.error()
     }
 }
